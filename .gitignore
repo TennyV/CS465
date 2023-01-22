@@ -60,7 +60,9 @@ typings/
 # next.js build output
 .next
 
-# Visual studio Code working files
+
+#visual studio code working files
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
