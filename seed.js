@@ -10,10 +10,4 @@ const seed = async function() {
     await trip.insertMany(trips);
 }
 
-module.exports = {
-
-    modelBaseDirectory: 'app_server/database/models',
-    models: ['*js', '!db.js'],
-    data: 'data',
-    db: "mongodb://127:.0.0.1:27017/travlr", // db connection url
-};
+module.exports = { seed };
