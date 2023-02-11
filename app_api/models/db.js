@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const host = process.env.DB_HOST || '127.0.0.1';
 const conn_uri = `mongodb://${host}/travlr`;
 
-const {seed} = require('../seed'); // Import seed.js
+const {seed} = require('../seed.js'); // Import seed.js
 
 require('./models/trips'); // Register models
 
