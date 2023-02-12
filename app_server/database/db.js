@@ -1,17 +1,11 @@
 const mongoose = require('mongoose');
-const host = process.env.DB_HOST || '127.0.0.1'
-const dbURI = 'mongodb://${host}/travlr';
-const readLine = require('readline');
+const host = process.env.DB_HOST || '127.0.0.1';
+const dbURI = `mongodb://${host}/travlr`;
 
-// avoid 'current Server Discovery and monitoring engine is deprecated'
-mongoose.set('useUnifiedTopology', true);
+const {seed} = require('../../seed'); // Import seed.js
 
-const connect = () => {
-    setTimeout(() => mongoose.connect(dbURI, {
-        useNewUrlParser: true,
-        useCreateIndex: true
-    }), 1000);
-}
+require('./travlr'); // Register models
+
 
 mongoose.connection.on('connected', () => {
   console.log(`Mongoose connected to ${dbURI}`);
@@ -49,4 +43,10 @@ process.on('SIGTERM', () => {
   });
 });
 
-require('../models/travlr');
+async function main() {
+  await mongoose.connect(dbURI);
+  await seed(); // Seed the database after connection
+}
+
+main().catch(console.log);
+
