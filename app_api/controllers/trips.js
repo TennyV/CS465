@@ -2,6 +2,16 @@ const mongoose = require('mongoose');
 const Model = mongoose.model('trips');
 
 
+
+const fetchTrip = async (req, res) => {
+  if(!!req.params.tripCode) {  
+      return tripsFindByCode(req, res);
+  }
+  return tripsList(req, res);
+}
+
+
+
 //GET: /trips - lists all the trips
 const tripsList = async (req, res) => {
     Model.find({}).exec((err, trips) => {
@@ -16,7 +26,7 @@ const tripsList = async (req, res) => {
   };
 
 // GET: /trips/tripCode - returns single trip
-  const tripsFindCode = async (req, res) => {
+  const tripsFindByCode = async (req, res) => {
     Model.find({ code: req.params.tripCode }).exec((err, trip) => {
       if (!trip) {
         return res.status(404).json({ message: "trip not found" });
@@ -29,6 +39,5 @@ const tripsList = async (req, res) => {
   };
 
   module.exports = {
-    tripsList,
-    tripsFindCode
+    fetchTrip
   };
