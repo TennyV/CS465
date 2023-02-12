@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const host = process.env.DB_HOST || '127.0.0.1';
-const conn_uri = `mongodb://${host}/travlr`;
+const dbURI = `mongodb://${host}/travlr`;
 
-const {seed} = require('../seed.js'); // Import seed.js
+const {seed} = require('../../seed'); // Import seed.js
 
-require('./models/trips'); // Register models
+require('./travlr'); // Register models
 
 
 mongoose.connection.on('connected', () => {
@@ -44,7 +44,7 @@ process.on('SIGTERM', () => {
 });
 
 async function main() {
-  await mongoose.connect(conn_uri);
+  await mongoose.connect(dbURI);
   await seed(); // Seed the database after connection
 }
 
