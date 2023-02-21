@@ -1,1 +1,11 @@
-Full stack Application
+Architecture
+Compare and contrast the types of frontend development you used in your full stack project, including Express HTML, JavaScript, and the single-page application (SPA). This class was quite the journey and I'm not quite sure it clicked with me. I'm quite good at following instructions and figuring things out, but when your dealing with device issues you have to be an expert at what the dependencies may or may not work with a lot of time and effort.
+Why did the backend use a NoSQL MongoDB database? The backend used the MongoDB database because it is one of the more flexible open-source DB's out there with tons of functionality.
+Functionality
+How is JSON different from Javascript and how does JSON tie together the frontend and backend development pieces?
+JSON is information that is easily understandable by webpages with the ability to be transported to many different mediums. It is how the internet and webpages in general transer information.
+Provide instances in the full stack process when you refactored code to improve functionality and efficiencies, and name the benefits that come from reusable user interface (UI) components. The benefits of refactoring code to improve functionality is great if you do it often, when condensed into a one week read everything class and it doesn't click you are sort of left in the dust to try to piece together information.
+Testing
+Methods for request and retrieval necessitate various types of API testing of endpoints, in addition to the difficulties of testing with added layers of security. Explain your understanding of methods, endpoints, and security in a full stack application. I understand that testing endpoints with postman gives you a clear indication of exactly what you are sending over the wire, you can also identify if you are accidentily sending sensitive information which would make the situation even worse.
+Reflection
+How has this course helped you in reaching your professional goals? What skills have you learned, developed, or mastered in this course to help you become a more marketable candidate in your career field? This course has taught me that I need a lot more time and a lot more hands on time with these particular frameworks. I understand enough to know what things are but to be proficient I would need a few months.
